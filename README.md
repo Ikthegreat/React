@@ -37,3 +37,5 @@ tsc --init
   "exclude": ["node_modules", "scripts", "dist"]
 }
 ```
+
+## TypeScript : Type 추론 가능

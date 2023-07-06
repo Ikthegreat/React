@@ -1,1 +1,2 @@
-# React 특강
+# SSAFY, React 모듈형 특강
+

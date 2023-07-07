@@ -2,7 +2,7 @@
 // operators (nullish, optional chaining)
 
 function run() {
-  // nullish();
+  nullish();
   optionalChaining();
 }
 
@@ -46,7 +46,8 @@ function optionalChaining() {
   };
 
   if (topic && typeof topic === "object" && !Array.isArray(topic)) {
-    let title, name;
+    let title;
+    let name;
     if (typeof topic.getTitle === "function") {
       title = topic.getTitle();
     }
@@ -58,8 +59,6 @@ function optionalChaining() {
 
     name = topic.getName?.();
   }
-
-  let title, name;
   // 코드를 작성합니다.
 }
 

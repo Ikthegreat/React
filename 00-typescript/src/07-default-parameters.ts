@@ -1,10 +1,10 @@
 // --------------------------------------------------------------------------
 // default parameters
 
-const randomNumber = (min, max) => {
-  let minValue = min ?? 0;
-  let maxValue = max ?? 10;
-  return Math.round(Math.random() * (maxValue - minValue)) + minValue;
+const randomNumber = (min: number = 0, max: number = 10): number => {
+  // let minValue = min ?? 0;
+  // let maxValue = max ?? 10;
+  return Math.round(Math.random() * (max - min)) + min;
 };
 
 let n1 = randomNumber();

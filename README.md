@@ -39,3 +39,34 @@ tsc --init
 ```
 
 ## TypeScript : Type 추론 가능
+
+## Interface
+
+```
+interface Options {
+  // required
+  option1: number;
+  // optional
+  option2?: boolean;
+}
+```
+
+- interface 내의 요소들은 기본적으로 required
+- 변수명 뒤에 ? 를 붙여 optional 속성으로 작성 가능
+
+또는
+
+```
+interface Options {
+  // required
+  option1: number;
+  // required
+  option2: boolean;
+}
+
+const defaultOptions: Partial<Options> = {
+  option1: 0
+}
+```
+
+- Partial<인터페이스> 적용 시 인터페이스 내 옵션들이 전부 optional

@@ -2,18 +2,18 @@
 // Promise, Async await
 
 function main() {
-  console.log('start!');
+  console.log("start!");
 
   // callback hell
   // 참고: https://bit.ly/3r5iUfe
   delay(() => {
-    console.log('1s');
+    console.log("1s");
     delay(() => {
-      console.log('2s');
+      console.log("2s");
       delay(() => {
-        console.log('3s');
+        console.log("3s");
         delay(() => {
-          console.log('4s');
+          console.log("4s");
         });
       });
     });
@@ -22,6 +22,10 @@ function main() {
 
 function delay(callback, time = 1000) {
   setTimeout(callback, time);
+}
+
+function delayPromise(time = 1000) {
+  return new Promise();
 }
 
 main();

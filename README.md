@@ -217,3 +217,11 @@ useState<type1 | type2>()
 ```
 
 위처럼 Type을 세팅하여 State의 Type을 여러가지로 세팅도 가능하다
+
+# React-Router
+
+### errorElement
+
+문제 발생 시 해당하는 Component를 화면에 보여줄 수 있다.
+
+이를 Child Component에도 추가하여 해당 Component에서 발생한 문제에 대해 다른 컴포넌트들을 보호할 수 있다.

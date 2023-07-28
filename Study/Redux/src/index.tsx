@@ -1,35 +1,40 @@
-const plus = document.getElementById("plus");
-const minus = document.getElementById("minus");
-const number = document.querySelector("span");
+import { createStore } from "redux";
 
-let count: number = 0;
+const plus = document.getElementById("plus") as HTMLButtonElement | null;
+const minus = document.getElementById("minus") as HTMLButtonElement | null;
+const number = document.querySelector("span") as HTMLSpanElement | null;
 
-if (number) {
-  number.innerText = count.toString();
-}
+const initialCount: number = 0;
 
-const updateText = () => {
-  if (number) {
-    number.innerText = count.toString();
+const countModifier = (count = initialCount, action: { type: string }) => {
+  if (action.type === "PLUS") {
+    return count + 1;
+  } else if (action.type === "MINUS") {
+    return count - 1;
   }
+  return count;
 };
 
-const handlePlus = () => {
-  count += 1;
-  updateText();
-};
+const countStore = createStore(countModifier);
 
-const handleMinus = () => {
-  count -= 1;
-  updateText();
-};
+countStore.subscribe(onChange);
 
 if (plus) {
-  plus.addEventListener("click", handlePlus);
+  plus.addEventListener("click", () => {
+    countStore.dispatch({ type: "PLUS" });
+  });
 }
 
 if (minus) {
-  minus.addEventListener("click", handleMinus);
+  minus.addEventListener("click", () => {
+    countStore.dispatch({ type: "MINUS" });
+  });
 }
+
+const onChange = () => {
+  if (number) {
+    number.innerText = countStore.getState().toString();
+  }
+};
 
 export {};

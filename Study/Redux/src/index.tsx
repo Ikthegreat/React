@@ -15,6 +15,12 @@ const countModifier = (count = initialCount, action: { type: string }) => {
   return count;
 };
 
+const onChange = () => {
+  if (number) {
+    number.innerText = countStore.getState().toString();
+  }
+};
+
 const countStore = createStore(countModifier);
 
 countStore.subscribe(onChange);
@@ -30,11 +36,5 @@ if (minus) {
     countStore.dispatch({ type: "MINUS" });
   });
 }
-
-const onChange = () => {
-  if (number) {
-    number.innerText = countStore.getState().toString();
-  }
-};
 
 export {};

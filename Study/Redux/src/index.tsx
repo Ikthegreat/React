@@ -1,12 +1,35 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./app";
+const plus = document.getElementById("plus");
+const minus = document.getElementById("minus");
+const number = document.querySelector("span");
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+let count: number = 0;
+
+if (number) {
+  number.innerText = count.toString();
+}
+
+const updateText = () => {
+  if (number) {
+    number.innerText = count.toString();
+  }
+};
+
+const handlePlus = () => {
+  count += 1;
+  updateText();
+};
+
+const handleMinus = () => {
+  count -= 1;
+  updateText();
+};
+
+if (plus) {
+  plus.addEventListener("click", handlePlus);
+}
+
+if (minus) {
+  minus.addEventListener("click", handleMinus);
+}
+
+export {};

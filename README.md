@@ -177,7 +177,7 @@ React의 경우 App.js에 Route 구조를 지정하고 사용하는 것이 일�
 </details>
 
 <details>
-<summary>Nomadcoders-React</summary>
+<summary>Nomadcoders</summary>
 
 ---
 
@@ -240,6 +240,14 @@ Vue 에서의 location.push 와 비슷한 기능
 
 함수를 통해서 특정 event 발생 시 페이지를 이동시킬 수 있다.
 
+# React-Hooks
+
+- useEffect는 ComponentDidMount, ComponentWillMount, ComponentDidUpdate 역할
+
+```
+useEffect(function, dependency)
+```
+
 </details>
 
 <details>
@@ -248,7 +256,7 @@ Vue 에서의 location.push 와 비슷한 기능
 ---
 
 컴포넌트 다이어그램
-![Component_Diagram](./README_Image/Component.drawio.png)
+![Component_Diagram](./Image/Component.drawio.png)
 
 ---
 
@@ -256,90 +264,90 @@ Vue 에서의 location.push 와 비슷한 기능
 
 - Home
 
-  ![](./README_Image/HOME.png)
+  ![](./Image/HOME.png)
 
 <details>
 <summary>나머지 페이지</summary>
 
 - Navber
 
-  ![](./README_Image/Navbar.png)
+  ![](./Image/Navbar.png)
 
 - Trainer List
 
-  ![](./README_Image/PT_List.png)
+  ![](./Image/PT_List.png)
 
 - Trainer List (날짜 선택하여 필터링)
 
-  ![](./README_Image/PT_List-1.png)
+  ![](./Image/PT_List-1.png)
 
 - Trainer Detail (Info)
 
-  ![](<./README_Image/PT_Detail_INFO%20(L).png>)
+  ![](<./Image/PT_Detail_INFO%20(L).png>)
 
 - Trainer Detail (Review)
 
-  ![](<./README_Image/PT_Detail_RV%20(R).png>)
+  ![](<./Image/PT_Detail_RV%20(R).png>)
 
 - User MyPage
 
-  ![](./README_Image/User%20MyPage.png)
+  ![](./Image/User%20MyPage.png)
 
 - User Info Edit Page
 
-  ![](./README_Image/User_Info_Edit.png)
+  ![](./Image/User_Info_Edit.png)
 
 - Bookmarked Trainer
 
-  ![](./README_Image/BookMarked%20Trainer.png)
+  ![](./Image/BookMarked%20Trainer.png)
 
 - User Schedule
 
-  ![](./README_Image/User_Calender.png)
+  ![](./Image/User_Calender.png)
 
 - My Review
 
-  ![](./README_Image/My_Review_List.png)
+  ![](./Image/My_Review_List.png)
 
 - Chat List
 
-  ![](./README_Image/My_Chatting_List.png)
+  ![](./Image/My_Chatting_List.png)
 
 - Trainer MyPage
 
-  ![](./README_Image/Trainer%20MyPage.png)
+  ![](./Image/Trainer%20MyPage.png)
 
 - Trainer Info Edit
 
-  ![](./README_Image/Trainer_Info_Edit.png)
+  ![](./Image/Trainer_Info_Edit.png)
 
 - Trainer Schedule
 
-  ![](./README_Image/Trainer_Calender.png)
+  ![](./Image/Trainer_Calender.png)
 
 - Auth
 
-  ![](./README_Image/Login.png)
+  ![](./Image/Login.png)
 
 - PT Room (Mobile Web)
 
-  ![](./README_Image/PT_Mobile.png)
+  ![](./Image/PT_Mobile.png)
 
 - PT Room (Mobile Web)
 
-  ![](./README_Image/PT_Mobile-1.png)
+  ![](./Image/PT_Mobile-1.png)
 
 - PT Room (PC Web)
 
-  ![](./README_Image/PT_PC.png)
+  ![](./Image/PT_PC.png)
 
 - 고객센터 (공지사항)
 
-  ![](<./README_Image/Customer_Center%20(L).png>)
+  ![](<./Image/Customer_Center%20(L).png>)
 
 - 고객센터 (Q&A)
 
-  ![](<./README_Image/Customer_Center%20(R).png>)
+  ![](<./Image/Customer_Center%20(R).png>)
 
   </details>
 
@@ -347,7 +355,7 @@ Vue 에서의 location.push 와 비슷한 기능
 
 기본 컬러 및 컨셉
 
-![](./README_Image/Color.png)
+![](./Image/Color.png)
 
 ## 써드파티 라이브러리 선택 고민
 
@@ -355,7 +363,7 @@ Vue 에서의 location.push 와 비슷한 기능
 
 ### Redux와 Recoil의 차이점 정리
 
-![](/README_Image/Redux_vs_Recoil.png)
+![](/Image/Redux_vs_Recoil.png)
 
 - Redux
 
@@ -382,7 +390,7 @@ Vue 에서의 location.push 와 비슷한 기능
   - Facebook사에서 개발, 가장 React스러운 상태관리라는 철학
   - Recoil의 경우 Next.js와 조금 더 친숙한 편이기도 함
 
-    ![](/README_Image/Recoil.png)
+    ![](/Image/Recoil.png)
 
 - 장점
 
@@ -431,5 +439,107 @@ React-Query 관련 글
 
 일단 오래 쓰여왔으며, 대중적이고, 개발자 풀이 크게 형성되어 있는 Redux를 공부하며 장단점을 스스로 느껴보고, 지속적으로 어떤 프로젝트나 상황에 어떤 라이브러리가 용이할지에 대해 스스로 판단할 수 있는 실력을 기르는 것이 중요하다고 생각되었다.
 ```
+
+</details>
+
+<details>
+<summary>구글링</summary>
+
+# React.StrictMode
+
+useEffect Hook 사용 시 Test를 위해 console.log로 Test 진행하였으나, Console창에 2번 렌더링되는 현상 발생하여 찾아보았다
+
+```
+useEffect가 2번 이상 연속으로 발생하는 경우 원인
+
+1. 해당 컴포넌트가 페이지내에서 2번 이상 사용되는 경우
+
+2. 상위 트리에서 언마운트 혹은 리마운트가 발생하는 경우
+- 이런 경우는 보통 상위 컴포넌트에서 key가 변경되거나 할 때 발생한다고 하며 해결하기 위해서는 문제가 되는 상위 컴포넌트를 찾기 위해 컴포넌트를 하나씩 거슬러 올라가며 useEffect를 통해 테스트해봐야 한다.
+
+3. Strict mode를 사용했을 경우
+
+React의 Strict mode는 개발 단계에서 개발자의 코드를 확인하여 사전에 발생할 수 있는 에러를 파악해 예기치 못한 오류를 막기 위해 사용하는데 이를 위해 일부 메소드가 2번씩 호출된다.
+
+생명주기 메소드들과 render, constructor, setState등의 메소드가 해당되며
+특히 CRA 환경 일 경우 설치 후 기본으로 StrictMode가 적용되어있기 때문에 index.js에서 React.StrictMode라는 컴포넌트가 App을 감싸고 있는지 확인해보아야 한다.
+
+Strict mode는 개발 단계에서만 적용되기 때문에 실제 배포시에는 원래대로 한번만 렌더링이 발생합니다.
+
+따라서 만약 개발 단계에서 초기 렌더링이 중복으로 발생하면 안되는 상황일 경우 임시로 index.js에서 <React.StrictMode> 컴포넌트를 잠시 주석처리하고 진행
+```
+
+# import React from "react"
+
+React 프로젝트 생성 시 App.tsx 등에 `import React from "react"`가 붙지만 생략해도 동작하는 것에 궁금증이 생김
+
+```
+브라우저는 HTML, CSS, JavaScript만 읽을 수 있기 때문에 우리가 작성한 React를 읽지 못한다. 따라서 React로 작성한 코드를 브라우저가 읽을 수 있도록 변환해주어야한다.
+
+React에서 JSX 문법을 사용하는데, 이 JSX 문법을 자바스크립트로 변환시킬 때 JSX transformer를 사용해 JSX로 작성된 React 메소드를 변환시킨다. 이때 객체인 React를 가져오기 위해서 import React from ‘react’를 맨 위에 작성해 React를 불러오게 되면 객체 React를 통해 React 메소드를 작성할 수 있게 된다.
+```
+
+### JSX
+
+```
+// JSX
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+function App() {
+  return <h1>Hello React!</h1>
+}
+
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)
+
+// JSX -> JS
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+function App() {
+  return React.createElemet("h1",null,"Hello React!");
+}
+
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)
+```
+
+이처럼 JSX는 React라는 객체의 메소드를 이용하여 구성요소들을 생성하기 때문에 문서의 위에 import React from ‘react’를 작성해 해당 JSX가 객체React를 받아오고 React를 유효한 JavaScript로 변환할 수 있도록 해준다.
+
+## 생략 가능 여부
+
+이는 작성하고 있는 컴포넌트가 상위 컴포넌트 인지 하위 컴포넌트 인지 파악하고 만약 상위 컴포넌트에 import React from ‘react’가 작성되었다면 하위에서는 생략해도 작동이 된다.
+
+물론 생략하지 않아도 작동하는데에는 아무런 지장이 없다. 추후 웹팩을 통해 최적화된 코드로 작성되므로 중복에 대한 비효율성은 걱정하지 않아도 된다.
+
+## React 버전 17부터 생략 가능
+
+2020년 10월 20일에 릴리즈된 React v17를 보면, React 내부적으로 JSX transformer가 JSX를 React 요소로 변환하는 작업을 거치기 때문에 모든 컴포넌트에 import React from ‘react’를 작성하지 않아도 된다
+
+```
+// JSX
+
+function App() {
+  return <h1>Hello React!</h1>
+}
+
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)
+
+// JSX -> JS
+
+import { jsx as _jsx } from "react/jsx-runtime"
+
+function App() {
+  return _jsx("h1", { children: "Hello React!" })
+}
+const rootElement = document.getElementById('root')
+ReactDOM.render(<App />, rootElement)
+```
+
+위의 예시와는 달라진 모습으로 변환된 모습을 볼 수 있다.
 
 </details>
